@@ -8,16 +8,20 @@ import sys
 from rand import rand
 import math
 
-def enc():
+decryptOrEncrypt = sys.argv[1]
+passpharse = sys.argv[2][1:]
+path = sys.argv[3][1:]
+outputType = sys.argv[4]
+
+def enc(decryptOrEncrypt, passpharse, path, outputType):
 	alphabet = ["a", "b", "c", "d","e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z", "A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z", "1", "2", "3", "4", "5", "6", "7", "8", "9", "0", "`", "!", "@", "#", "$", "%", "^", "&", "*", "(", ")", "-", "_", "=", "+", "{", "[", "]", "}", "|", ",", ":", ";", "'", '"', "<", ">", "?", " ", "\n", "	", "[not suported]"]
 
-	passpharse = sys.argv[2][1:]
-	path = sys.argv[3][1:]
+
 
 	with open(path) as fi:
 		fi = fi.read()
 
-	if sys.argv[1] == "-e":
+	if  decryptOrEncrypt == "-e":
 		fl = len(fi)
 		num = rand(fl)
 		pl = len(passpharse)
@@ -71,7 +75,7 @@ def enc():
 		fi_nums_final = " ".join(fi_list_nums_final)
 
 		try:
-			save = sys.argv[4]
+			save = outputType
 			if save == "-d":
 				print(num_final + " file " + fi_nums_final)
 			if save == "-s":
@@ -86,7 +90,7 @@ def enc():
 			with open(path,"w") as fil:
 				fil.write(num_final + " file " + fi_nums_final)
 
-	if sys.argv[1] == "-d":
+	if decryptOrEncrypt == "-d":
 		fi_l1 = fi.split("file")
 		num_lst_enc = fi_l1[0][0:-1].split(" ")
 		file_num_lst_enc = fi_l1[1][1:].split(" ")
@@ -129,7 +133,7 @@ def enc():
 		file_str = "".join(file_list)
 
 		try:
-			save = sys.argv[4]
+			save = outputType
 			if save == "-d":
 				print(file_str)
 			if save == "-s":
