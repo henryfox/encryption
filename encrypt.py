@@ -52,6 +52,8 @@ if sys.argv[1] == "-e":
 
 	fi_list_nums = []
 
+	num_list_final = []
+
 	for x in fi_list:
 		y = 0
 		z = 0
@@ -62,9 +64,10 @@ if sys.argv[1] == "-e":
 				break
 		fi_list_nums.append(z)
 
-	print fi_list_nums
+	for x in range(0, len(num_list)):
+		num_list_final.append(str(int(num_list[x]) + int(pass_phrase_list_nums[x])))
 
+	num_final = "".join(num_list_final)
 
-
-
+	print num_final
 
