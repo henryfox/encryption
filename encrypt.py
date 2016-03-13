@@ -79,3 +79,10 @@ if sys.argv[1] == "-e":
 	except:
 		with open(path,"w") as fil:
 			fil.write(num_final + " file " + fi_nums_final)
+
+if sys.argv[1] == "-d":
+	fi_l1 = fi.split("file")
+	fi_s1 = "".join(fi_l1[0])
+	fi_s2 = "".join(fi_l1[1])[1:]
+	print fi_s1
+	print fi_s2
