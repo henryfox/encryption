@@ -1,3 +1,8 @@
+#! /usr/bin/env python
+
+#by henry fox
+#if you use this code pleas give me credit
+
 from __future__ import division
 import sys
 from rand import rand
