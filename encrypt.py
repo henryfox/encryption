@@ -8,6 +8,7 @@ import sys
 from rand import rand
 import math
 
+
 def enc(decryptOrEncrypt, passpharse, path, outputType):
 	alphabet = ["a", "b", "c", "d","e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z", "A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z", "1", "2", "3", "4", "5", "6", "7", "8", "9", "0", "`", "!", "@", "#", "$", "%", "^", "&", "*", "(", ")", "-", "_", "=", "+", "{", "[", "]", "}", "|", ",", ":", ";", "'", '"', "<", ">", "?", " ", "\n", "	", "[not suported]"]
 
@@ -72,7 +73,7 @@ def enc(decryptOrEncrypt, passpharse, path, outputType):
 		try:
 			save = outputType
 			if save == "-d":
-				print(num_final + " file " + fi_nums_final)
+				return(num_final + " file " + fi_nums_final)
 			if save == "-n":
 				with open(path,"w") as fil:
 					fil.write(num_final + " file " + fi_nums_final)
@@ -133,7 +134,7 @@ def enc(decryptOrEncrypt, passpharse, path, outputType):
 		try:
 			save = outputType
 			if save == "-d":
-				print(file_str)
+				return(file_str)
 			if save == "-n":
 				with open(path,"w") as fil:
 					fil.write(file_str)
@@ -155,4 +156,4 @@ passpharse = sys.argv[2][1:]
 path = sys.argv[3][1:]
 outputType = sys.argv[4]
 
-enc(decryptOrEncrypt, passpharse, path, outputType)
+print(enc(decryptOrEncrypt, passpharse, path, outputType))
