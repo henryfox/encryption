@@ -82,8 +82,8 @@ if sys.argv[1] == "-e":
 
 if sys.argv[1] == "-d":
 	fi_l1 = fi.split("file")
-	num_enc = "".join(fi_l1[0])
-	file_num_enc = "".join(fi_l1[1])[1:]
+	num_lst_enc = fi_l1[0][0:-1].split(" ")
+	file_num_lst_enc = fi_l1[1][1:].split(" ")
 	
 	fl = len(fi)
 	num = rand(fl)
@@ -91,10 +91,12 @@ if sys.argv[1] == "-d":
 	pass_phrase_full = []
 	y = 0
 	pass_phrase_list_nums = []
+	num_lst = []
+	file_num_lst = []
 
 	passpharse_list = list(passpharse)
 	
-	for x in range(0, fl):
+	for x in range(0, len(num_lst_enc)):
 		if y >= pl:
 			y = 0
 		pass_phrase_full.append(passpharse_list[y])
@@ -104,11 +106,14 @@ if sys.argv[1] == "-d":
 		z = 0
 		for y in alphabet:
 			z += 1
-
 			if y == x:
 				break
 		pass_phrase_list_nums.append(z)
+	for x in range(0, len(num_lst_enc)):
+		num_lst.append(int(num_lst_enc[x]) - int(pass_phrase_list_nums[x]))
 
-
+	for x in range(0, len(num_lst_enc)):
+		file_num_lst.append(int(file_num_lst_enc[x]) - int(num_lst[x]))
+	print file_num_lst
 
 
