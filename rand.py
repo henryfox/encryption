@@ -1,7 +1,6 @@
 import random
 
 
-
 def rand(dig):
 	nums = []
 

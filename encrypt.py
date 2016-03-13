@@ -67,7 +67,7 @@ if sys.argv[1] == "-e":
 	try:
 		save = sys.argv[4]
 		if save == "-d":
-			print num_final + " file " + fi_nums_final
+			print(num_final + " file " + fi_nums_final)
 		if save == "-s":
 			try:
 				save_location = argv[5]
@@ -125,7 +125,7 @@ if sys.argv[1] == "-d":
 	try:
 		save = sys.argv[4]
 		if save == "-d":
-			print file_str
+			print(file_str)
 		if save == "-s":
 			try:
 				save_location = argv[5]
