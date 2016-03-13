@@ -3,7 +3,7 @@ import sys
 from rand import rand
 import math
 
-alphabet = ["a", "b", "c", "d","e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z", "A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z", "1", "2", "3", "4", "5", "6", "7", "8", "9", "0", "`", "!", "@", "#", "$", "%", "^", "&", "*", "(", ")", "-", "_", "=", "+", "{", "[", "]", "}", "|", ",", ":", ";", "'", '"', "<", ">", "?", " "]
+alphabet = ["a", "b", "c", "d","e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z", "A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z", "1", "2", "3", "4", "5", "6", "7", "8", "9", "0", "`", "!", "@", "#", "$", "%", "^", "&", "*", "(", ")", "-", "_", "=", "+", "{", "[", "]", "}", "|", ",", ":", ";", "'", '"', "<", ">", "?", " ", "\n"]
 
 passpharse = sys.argv[2][1:]
 path = sys.argv[3][1:]
@@ -93,6 +93,8 @@ if sys.argv[1] == "-d":
 	pass_phrase_list_nums = []
 	num_lst = []
 	file_num_lst = []
+	file_list = []
+
 
 	passpharse_list = list(passpharse)
 	
@@ -114,6 +116,8 @@ if sys.argv[1] == "-d":
 
 	for x in range(0, len(num_lst_enc)):
 		file_num_lst.append(int(file_num_lst_enc[x]) - int(num_lst[x]))
-	print file_num_lst
+	
+	for x in file_num_lst:
+		file_list.append(alphabet[x - 1])
 
-
+	file_str = "".join(file_list)
