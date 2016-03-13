@@ -121,3 +121,19 @@ if sys.argv[1] == "-d":
 		file_list.append(alphabet[x - 1])
 
 	file_str = "".join(file_list)
+
+	try:
+		save = sys.argv[4]
+		if save == "-d":
+			print file_str
+		if save == "-s":
+			try:
+				save_location = argv[5]
+
+				with open(save_location,"w") as fil:
+					fil.write(file_str)
+			except:
+				"you did not enter a save location or the save location you enterd is not valid"
+	except:
+		with open(path,"w") as fil:
+			fil.write(file_str)
