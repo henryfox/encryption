@@ -46,4 +46,25 @@ if sys.argv[1] == "-e":
 			if y == x:
 				break
 		pass_phrase_list_nums.append(z)
-	print pass_phrase_list_nums
+	num_list = list(num)
+
+	fi_list = list(fi)
+
+	fi_list_nums = []
+
+	for x in fi_list:
+		y = 0
+		z = 0
+		for y in alphabet:
+			z += 1
+
+			if y == x:
+				break
+		fi_list_nums.append(z)
+
+	print fi_list_nums
+
+
+
+
+
