@@ -8,11 +8,6 @@ import sys
 from rand import rand
 import math
 
-decryptOrEncrypt = sys.argv[1]
-passpharse = sys.argv[2][1:]
-path = sys.argv[3][1:]
-outputType = sys.argv[4]
-
 def enc(decryptOrEncrypt, passpharse, path, outputType):
 	alphabet = ["a", "b", "c", "d","e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z", "A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z", "1", "2", "3", "4", "5", "6", "7", "8", "9", "0", "`", "!", "@", "#", "$", "%", "^", "&", "*", "(", ")", "-", "_", "=", "+", "{", "[", "]", "}", "|", ",", ":", ";", "'", '"', "<", ">", "?", " ", "\n", "	", "[not suported]"]
 
@@ -147,3 +142,10 @@ def enc(decryptOrEncrypt, passpharse, path, outputType):
 		except:
 			with open(path,"w") as fil:
 				fil.write(file_str)
+
+decryptOrEncrypt = sys.argv[1]
+passpharse = sys.argv[2][1:]
+path = sys.argv[3][1:]
+outputType = sys.argv[4]
+
+print(enc(decryptOrEncrypt, passpharse, path, outputType))
