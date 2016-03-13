@@ -82,7 +82,33 @@ if sys.argv[1] == "-e":
 
 if sys.argv[1] == "-d":
 	fi_l1 = fi.split("file")
-	fi_s1 = "".join(fi_l1[0])
-	fi_s2 = "".join(fi_l1[1])[1:]
-	print fi_s1
-	print fi_s2
+	num_enc = "".join(fi_l1[0])
+	file_num_enc = "".join(fi_l1[1])[1:]
+	
+	fl = len(fi)
+	num = rand(fl)
+	pl = len(passpharse)
+	pass_phrase_full = []
+	y = 0
+	pass_phrase_list_nums = []
+
+	passpharse_list = list(passpharse)
+	
+	for x in range(0, fl):
+		if y >= pl:
+			y = 0
+		pass_phrase_full.append(passpharse_list[y])
+		y += 1
+	for x in pass_phrase_full:
+		y = 0
+		z = 0
+		for y in alphabet:
+			z += 1
+
+			if y == x:
+				break
+		pass_phrase_list_nums.append(z)
+
+
+
+
