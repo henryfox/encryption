@@ -15,20 +15,9 @@ if sys.argv[1] == "-e":
 	fl = len(fi)
 	num = rand(fl)
 	pl = len(passpharse)
-	nopl = str(fl / pl)
-	nopll = nopl.split(".")
 	pass_phrase_full = []
 	y = 0
 	pass_phrase_list_nums = []
-	
-	if len(nopll) == 2:
-		nopl_frac = (float(nopl)).as_integer_ratio()
-		if nopl_frac[1] < fl:
-			nopl_frac_bn = math.floor(fl / nopl_frac[1])
-			nopl_frac_tn = math.floor(nopl_frac[0] * nopl_frac_bn)
-		else:
-			nopl_frac_bn = math.floor(nopl_frac[1] / fl)
-			nopl_frac_tn = math.floor(nopl_frac[0] / nopl_frac_bn)
 	
 	passpharse_list = list(passpharse)
 	
@@ -51,6 +40,7 @@ if sys.argv[1] == "-e":
 	fi_list = list(fi)
 
 	fi_list_nums = []
+	fi_list_nums_final = []
 
 	num_list_final = []
 
@@ -67,7 +57,11 @@ if sys.argv[1] == "-e":
 	for x in range(0, len(num_list)):
 		num_list_final.append(str(int(num_list[x]) + int(pass_phrase_list_nums[x])))
 
-	num_final = "".join(num_list_final)
-
+	num_final = " ".join(num_list_final)
+	
+	for x in range(0, len(num_list)):
+		fi_list_nums_final.append(str(int(num_list[x]) + int(fi_list_nums[x])))
+	fi_nums_final = " ".join(fi_list_nums_final)
+	
+	print fi_nums_final
 	print num_final
-
