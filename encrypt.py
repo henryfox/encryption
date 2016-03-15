@@ -79,7 +79,7 @@ def enc(decryptOrEncrypt, passpharse, path, outputType):
 					fil.write(num_final + " file " + fi_nums_final)
 			if save == "-s":
 				try:
-					save_location = argv[5]
+					save_location = saveLocation
 
 					with open(save_location,"w") as fil:
 						fil.write(num_final + " file " + fi_nums_final)
@@ -141,7 +141,7 @@ def enc(decryptOrEncrypt, passpharse, path, outputType):
 
 			if save == "-s":
 				try:
-					save_location = argv[5]
+					save_location = saveLocation
 
 					with open(save_location,"w") as fil:
 						fil.write(file_str)
@@ -150,10 +150,3 @@ def enc(decryptOrEncrypt, passpharse, path, outputType):
 		except:
 			with open(path,"w") as fil:
 				fil.write(file_str)
-
-decryptOrEncrypt = sys.argv[1]
-passpharse = sys.argv[2][1:]
-path = sys.argv[3][1:]
-outputType = sys.argv[4]
-
-print(enc(decryptOrEncrypt, passpharse, path, outputType))
